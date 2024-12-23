@@ -3,6 +3,9 @@ import { TradePanel } from "@/components/dashboard/TradePanel";
 import { WaterPanel } from "@/components/dashboard/WaterPanel";
 import { SeismicPanel } from "@/components/dashboard/SeismicPanel";
 import { EnergyPanel } from "@/components/dashboard/EnergyPanel";
+import { UrbanPanel } from "@/components/dashboard/UrbanPanel";
+import { CulturalPanel } from "@/components/dashboard/CulturalPanel";
+import { ImpactPanel } from "@/components/dashboard/ImpactPanel";
 
 const Dashboard = () => {
   return (
@@ -17,6 +20,9 @@ const Dashboard = () => {
         <WaterPanel />
         <SeismicPanel />
         <EnergyPanel />
+        <UrbanPanel />
+        <CulturalPanel />
+        <ImpactPanel />
       </div>
     </div>
   );
