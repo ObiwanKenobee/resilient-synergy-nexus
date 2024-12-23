@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
-import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from "recharts";
+import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from "recharts";
 
 const data = [
   { subject: "Economic", A: 120, B: 110, fullMark: 150 },
@@ -23,34 +23,39 @@ const config = {
 
 export const ImpactPanel = () => {
   return (
-    <Card className="col-span-1">
+    <Card className="w-full">
       <CardHeader>
-        <CardTitle>Impact Assessment</CardTitle>
+        <CardTitle className="text-lg md:text-xl">Impact Assessment</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="h-[300px]">
-          <ChartContainer config={config}>
-            <RadarChart data={data}>
-              <PolarGrid />
-              <PolarAngleAxis dataKey="subject" />
-              <PolarRadiusAxis />
-              <Radar
-                name="Current"
-                dataKey="A"
-                stroke="var(--color-current)"
-                fill="var(--color-current)"
-                fillOpacity={0.6}
-              />
-              <Radar
-                name="Target"
-                dataKey="B"
-                stroke="var(--color-target)"
-                fill="var(--color-target)"
-                fillOpacity={0.6}
-              />
-              <ChartTooltip />
-            </RadarChart>
-          </ChartContainer>
+        <div className="h-[300px] md:h-[400px] w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <ChartContainer config={config}>
+              <RadarChart data={data}>
+                <PolarGrid />
+                <PolarAngleAxis 
+                  dataKey="subject"
+                  tick={{ fontSize: 12 }}
+                />
+                <PolarRadiusAxis />
+                <Radar
+                  name="Current"
+                  dataKey="A"
+                  stroke="var(--color-current)"
+                  fill="var(--color-current)"
+                  fillOpacity={0.6}
+                />
+                <Radar
+                  name="Target"
+                  dataKey="B"
+                  stroke="var(--color-target)"
+                  fill="var(--color-target)"
+                  fillOpacity={0.6}
+                />
+                <ChartTooltip />
+              </RadarChart>
+            </ChartContainer>
+          </ResponsiveContainer>
         </div>
       </CardContent>
     </Card>
