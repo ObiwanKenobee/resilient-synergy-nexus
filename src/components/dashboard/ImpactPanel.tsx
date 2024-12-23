@@ -8,6 +8,8 @@ const data = [
   { subject: "Cultural", A: 86, B: 130, fullMark: 150 },
   { subject: "Energy", A: 99, B: 100, fullMark: 150 },
   { subject: "Infrastructure", A: 85, B: 90, fullMark: 150 },
+  { subject: "Innovation", A: 65, B: 85, fullMark: 150 },
+  { subject: "Resilience", A: 90, B: 100, fullMark: 150 },
 ];
 
 const config = {
@@ -21,7 +23,7 @@ const config = {
 
 export const ImpactPanel = () => {
   return (
-    <Card className="col-span-2">
+    <Card className="col-span-1">
       <CardHeader>
         <CardTitle>Impact Assessment</CardTitle>
       </CardHeader>

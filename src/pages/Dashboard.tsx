@@ -6,6 +6,7 @@ import { EnergyPanel } from "@/components/dashboard/EnergyPanel";
 import { UrbanPanel } from "@/components/dashboard/UrbanPanel";
 import { CulturalPanel } from "@/components/dashboard/CulturalPanel";
 import { ImpactPanel } from "@/components/dashboard/ImpactPanel";
+import { GlobalOverviewPanel } from "@/components/dashboard/GlobalOverviewPanel";
 
 const Dashboard = () => {
   return (
@@ -16,13 +17,14 @@ const Dashboard = () => {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <GlobalOverviewPanel />
+        <ImpactPanel />
         <TradePanel />
         <WaterPanel />
         <SeismicPanel />
         <EnergyPanel />
         <UrbanPanel />
         <CulturalPanel />
-        <ImpactPanel />
       </div>
     </div>
   );
